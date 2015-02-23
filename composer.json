@@ -1,0 +1,26 @@
+{
+    "name": "duxet/laravel-realtime",
+    "description": "Laravel realtime communication using pub/sub pattern",
+    "keywords": ["laravel", "realtime", "pubsub"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "duxet",
+            "email": "duxetlg@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.0.*",
+        "phpunit/phpunit": "~4.4",
+        "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "duxet\\Realtime\\": "src/"
+        }
+    }
+}
