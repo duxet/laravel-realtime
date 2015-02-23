@@ -11,17 +11,28 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.0.*"
+        "illuminate/support": "5.0.*",
+        "graham-campbell/manager": "~2.0"
     },
     "require-dev": {
         "orchestra/testbench": "3.0.*",
+        "graham-campbell/testbench": "~2.0",
         "phpunit/phpunit": "~4.4",
         "mockery/mockery": "~0.9",
         "codeclimate/php-test-reporter": "0.1.*"
     },
+    "suggest": {
+        "pubnub/pubnub": "PubNub support.",
+        "pusher/pusher-php-server": "Pusher support."
+    },
     "autoload": {
         "psr-4": {
             "duxet\\Realtime\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "duxet\\Tests\\Realtime\\": "tests/"
         }
     }
 }
