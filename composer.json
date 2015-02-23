@@ -16,7 +16,8 @@
     "require-dev": {
         "orchestra/testbench": "3.0.*",
         "phpunit/phpunit": "~4.4",
-        "mockery/mockery": "~0.9"
+        "mockery/mockery": "~0.9",
+        "codeclimate/php-test-reporter": "0.1.*"
     },
     "autoload": {
         "psr-4": {
