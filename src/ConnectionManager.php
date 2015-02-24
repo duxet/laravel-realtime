@@ -1,9 +1,10 @@
 <?php namespace duxet\Realtime; 
 
+use duxet\Realtime\Contracts\Factory;
 use GrahamCampbell\Manager\AbstractManager;
 use InvalidArgumentException;
 
-class ConnectionManager extends AbstractManager {
+class ConnectionManager extends AbstractManager implements Factory {
 
     /**
      * Create the connection instance.
