@@ -30,7 +30,7 @@ class PubNubConnection implements Connection {
     {
         $result = $this->pubnub->publish($channel, $message);
 
-        return boolval($result[1] === 'Sent');
+        return $result[1] === 'Sent';
     }
 
     /**
