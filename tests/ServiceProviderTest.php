@@ -11,4 +11,9 @@ class ServiceProviderTest extends TestCase {
         $this->assertIsInjectable('duxet\Realtime\ConnectionManager');
     }
 
+    public function testConnectionIsInjectable()
+    {
+        $this->assertIsInjectable('duxet\Realtime\Contracts\Connection');
+    }
+
 }
