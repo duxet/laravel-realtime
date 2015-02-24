@@ -2,6 +2,7 @@
 
 use duxet\Realtime\Connections\PubNubConnection;
 use GrahamCampbell\Manager\ConnectorInterface;
+use Pubnub\Pubnub;
 
 class PubNubConnector implements ConnectorInterface {
 
@@ -14,7 +15,9 @@ class PubNubConnector implements ConnectorInterface {
      */
     public function connect(array $config)
     {
-        return new PubNubConnection();
+        $pubnub = new Pubnub($config);
+
+        return new PubNubConnection($pubnub);
     }
 
 }

@@ -2,8 +2,22 @@
 
 use Closure;
 use duxet\Realtime\Contracts\Connection;
+use Pubnub\Pubnub;
 
 class PubNubConnection implements Connection {
+
+    /**
+     * @var Pubnub
+     */
+    protected $pubnub;
+
+    /**
+     * @param Pubnub $pubnub
+     */
+    public function __construct(Pubnub $pubnub)
+    {
+        $this->pubnub = $pubnub;
+    }
 
     /**
      * Publish new message on given channel.
@@ -14,7 +28,9 @@ class PubNubConnection implements Connection {
      */
     public function publish($channel, $message)
     {
-        // TODO: Implement publish() method.
+        $result = $this->pubnub->publish($channel, $message);
+
+        return boolval($result[1] === 'Sent');
     }
 
     /**
@@ -26,7 +42,7 @@ class PubNubConnection implements Connection {
      */
     public function subscribe($channel, Closure $callback)
     {
-        // TODO: Implement subscribe() method.
+        $this->pubnub->subscribe($channel, $callback);
     }
 
 }
