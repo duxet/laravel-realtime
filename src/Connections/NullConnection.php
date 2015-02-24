@@ -12,7 +12,10 @@ class NullConnection implements ConnectionContract {
      * @param  mixed $message
      * @return bool
      */
-    public function publish($channel, $message) {}
+    public function publish($channel, $message)
+    {
+        return true;
+    }
 
     /**
      * Subscribe to given channel.

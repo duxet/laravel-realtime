@@ -7,9 +7,10 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="true"
+         stopOnError="false"
+         stopOnFailure="false"
          syntaxCheck="false"
-        >
+>
     <testsuites>
         <testsuite name="Test Suite">
             <directory>tests</directory>
