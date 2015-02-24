@@ -1,9 +1,23 @@
 <?php namespace duxet\Realtime\Connections; 
 
-use Closure;
+use Closure, Exception;
 use duxet\Realtime\Contracts\Connection;
+use Pusher;
 
 class PusherConnection implements Connection {
+
+    /**
+     * @var Pusher
+     */
+    protected $pusher;
+
+    /**
+     * @param Pusher $pusher
+     */
+    public function __construct(Pusher $pusher)
+    {
+        $this->pusher = $pusher;
+    }
 
     /**
      * Publish new message on given channel.
@@ -14,7 +28,7 @@ class PusherConnection implements Connection {
      */
     public function publish($channel, $message)
     {
-        // TODO: Implement publish() method.
+        $this->pusher->trigger($channel, 'message', $message);
     }
 
     /**
@@ -22,11 +36,11 @@ class PusherConnection implements Connection {
      *
      * @param  string $channel
      * @param  Closure $callback
-     * @return void
+     * @throws Exception
      */
     public function subscribe($channel, Closure $callback)
     {
-        // TODO: Implement subscribe() method.
+        throw new Exception('Subscribe method is not implemented for Pusher yet.');
     }
 
 }

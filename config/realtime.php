@@ -33,6 +33,7 @@ return [
             'publish_key'   => env('PUBNUB_PUBLISH_KEY'),
             'subscribe_key' => env('PUBNUB_SUBSCRIBE_KEY'),
             'secret_key'    => env('PUBNUB_SECRET_KEY'),
+            'ssl'           => env('PUBNUB_SSL', true),
         ],
 
         'pusher' => [
@@ -40,6 +41,7 @@ return [
             'app_id' => env('PUSHER_APP_ID'),
             'key'    => env('PUSHER_KEY'),
             'secret' => env('PUSHER_SECRET'),
+            'ssl'    => env('PUSHER_SSL', true),
         ],
 
         'null' => [

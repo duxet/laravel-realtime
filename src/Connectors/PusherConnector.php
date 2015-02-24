@@ -2,6 +2,7 @@
 
 use duxet\Realtime\Connections\PusherConnection;
 use GrahamCampbell\Manager\ConnectorInterface;
+use Pusher;
 
 class PusherConnector implements ConnectorInterface {
 
@@ -14,6 +15,12 @@ class PusherConnector implements ConnectorInterface {
      */
     public function connect(array $config)
     {
-        return new PusherConnection();
+        $pusher = new Pusher(
+            $config['key'], $config['secret'],$config['app_id'], [
+                'encrypted' => $config['ssl']
+            ]
+        );
+
+        return new PusherConnection($pusher);
     }
 }
