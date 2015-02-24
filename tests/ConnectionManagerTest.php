@@ -24,7 +24,7 @@ class ConnectionManagerTest extends TestCase {
         $manager = $this->getManager();
         $config = ['driver' => 'error'];
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('realtime.connections')->andReturn(['local' => $config]);
+            ->with('realtime.connections')->andReturn(['error' => $config]);
         $this->assertSame([], $manager->getConnections());
         $return = null;
         $manager->connection('error');
