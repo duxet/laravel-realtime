@@ -1,15 +1,19 @@
 <?php namespace duxet\Tests\Realtime;
 
-class TestCase extends \Orchestra\Testbench\TestCase {
+use GrahamCampbell\TestBench\AbstractPackageTestCase;
+
+class TestCase extends AbstractPackageTestCase {
 
     /**
-     * Get package providers.
+     * Get the service provider class.
      *
-     * @return array
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
+     * @return string
      */
-    protected function getPackageProviders()
+    protected function getServiceProviderClass($app)
     {
-        return ['duxet\Realtime\RealtimeServiceProvider'];
+        return 'duxet\Realtime\RealtimeServiceProvider';
     }
 
 }

@@ -15,7 +15,6 @@
         "graham-campbell/manager": "~2.0"
     },
     "require-dev": {
-        "orchestra/testbench": "3.0.*",
         "graham-campbell/testbench": "~2.0",
         "phpunit/phpunit": "~4.4",
         "mockery/mockery": "~0.9",
