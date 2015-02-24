@@ -16,6 +16,20 @@ class ConnectionManagerTest extends TestCase {
         $this->assertArrayHasKey('local', $manager->getConnections());
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testConnectionError()
+    {
+        $manager = $this->getManager();
+        $config = ['driver' => 'error'];
+        $manager->getConfig()->shouldReceive('get')->once()
+            ->with('realtime.connections')->andReturn(['local' => $config]);
+        $this->assertSame([], $manager->getConnections());
+        $return = null;
+        $manager->connection('error');
+    }
+
     protected function getManager()
     {
         $config = Mockery::mock('Illuminate\Contracts\Config\Repository');
