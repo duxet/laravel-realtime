@@ -7,6 +7,24 @@
 
 Laravel package for realtime communication using publish/subscribe pattern.
 
+# What is that?
+Ajax is not cool anymore. Now we have websockets, which gives us realtime communication with minimal delay. But how to use it with Laravel? This package gives answer to this question!
+
+# Supported services
+* PubNub
+* Pusher (only publish method)
+
+# How to use it?
+```php
+Realtime::publish('my_channel', 'Hello world!');
+```
+
+```php
+Realtime::subscribe('my_channel', function($message) {
+  ...
+);
+```
+
 # Installation
 Require this package by using following command:
 
@@ -18,6 +36,11 @@ After updating composer, add the ServiceProvider to the providers array in `conf
 
 ```php
 'duxet\Realtime\RealtimeServiceProvider',
+```
+
+And if you want, you can add alias to Facade in your 'config/app.php'
+```php
+'Realtime' => 'duxet\Realtime\Facades\Realtime',
 ```
 
 # License
