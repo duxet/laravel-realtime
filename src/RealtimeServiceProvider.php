@@ -2,6 +2,7 @@
 
 use duxet\Realtime\Connections\NullConnection;
 use duxet\Realtime\Connectors\PubNubConnector;
+use duxet\Realtime\Connectors\PusherConnector;
 use Illuminate\Support\ServiceProvider;
 
 class RealtimeServiceProvider extends ServiceProvider {
