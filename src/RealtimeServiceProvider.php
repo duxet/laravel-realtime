@@ -73,11 +73,11 @@ class RealtimeServiceProvider extends ServiceProvider {
         });
 
         $manager->extend('pubnub', function($config) {
-           return with(new PubNubConnector($config))->connect();
+           return with(new PubNubConnector())->connect($config);
         });
 
         $manager->extend('pusher', function($config) {
-            return with(new PusherConnector($config))->connect();
+            return with(new PusherConnector())->connect($config);
         });
     }
 
