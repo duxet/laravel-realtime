@@ -2,6 +2,7 @@
 
 use Closure;
 use duxet\Realtime\Contracts\Connection;
+use Exception;
 use Pubnub\Pubnub;
 
 class PubNubConnection implements Connection {
@@ -29,6 +30,11 @@ class PubNubConnection implements Connection {
     public function publish($channel, $message)
     {
         $result = $this->pubnub->publish($channel, $message);
+
+        if (isset($result['error']))
+        {
+            throw new Exception('PubNub error: '. $result['message']);
+        }
 
         return $result[1] === 'Sent';
     }
